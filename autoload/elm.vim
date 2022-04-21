@@ -275,7 +275,7 @@ function! elm#Make(...) abort
     cwindow
 
     if get(g:, 'elm_jump_to_error', 1)
-      ll 1
+      cc 1
     endif
   else
     call elm#util#EchoSuccess('', 'Sucessfully compiled')
