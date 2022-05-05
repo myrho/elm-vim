@@ -180,10 +180,10 @@ function! elm#Build(input, output, bin) abort
     " There are situations where you might have an unknown import in a
     " non-test file but I would hope there error in that case would be the
     " same in 'elm-test' too.
-    if a:bin !=# 'elm-test' && l:json.type ==# 'compile-errors' && l:json.errors[0].problems[0].title ==# 'MODULE NOT FOUND'
-      return elm#Build(a:input, a:output, 'elm-test')
+    " if a:bin !=# 'elm-test' && l:json.type ==# 'compile-errors' && l:json.errors[0].problems[0].title ==# 'MODULE NOT FOUND'
+      " return elm#Build(a:input, a:output, 'elm-test')
     " Check it is the json output that we're expecting
-    elseif l:json.type ==# 'compile-errors'
+    if l:json.type ==# 'compile-errors'
 
       " Iterate over the reports in the output
       for l:report in l:json.errors
